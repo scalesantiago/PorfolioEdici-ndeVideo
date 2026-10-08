@@ -272,6 +272,8 @@ addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#md").classList.contains(
 const bg=document.querySelector(".bg"),nv=$("#nav");
 bg.onclick=()=>{const o=nv.classList.toggle("on");bg.setAttribute("aria-expanded",o);bg.textContent=o?"Cerrar":"Menú"};
 nv.querySelectorAll("a").forEach(a=>a.onclick=()=>{nv.classList.remove("on");bg.textContent="Menú"});
+/* email: en computadora abre Gmail en una pestaña nueva (mailto falla si no hay app de correo configurada) */
+if(!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)){document.querySelectorAll('a[href^="mailto:"]').forEach(a=>a.addEventListener("click",e=>{e.preventDefault();window.open("https://mail.google.com/mail/?view=cm&fs=1&to=scale.santiago@gmail.com&su="+encodeURIComponent("Consulta por edición de video"),"_blank","noopener")}))}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.08});
 document.querySelectorAll(".rv").forEach(el=>io.observe(el));
 </script>
