@@ -155,7 +155,7 @@ nav.on{display:flex}nav a{font-size:1.6rem;font-weight:800;padding:.7rem 0;borde
 <div><p class="roles">Editor de video<br>Creador de contenido<br>Diseñador gráfico</p>
 <p class="lead">Transformo ideas, material y conceptos en contenido audiovisual que comunica, conecta y genera impacto.</p></div>
 <div><div class="ctas"><a class="btn p" href="#trabajos">Ver mis trabajos ↓</a><a class="btn" href="#contacto">Hablemos</a></div>
-<div class="ctas" style="margin-top:.7rem"><a class="btn" href="mailto:scale.santiago@gmail.com">Enviame un email</a><a class="btn" href="#" data-wa target="_blank" rel="noopener">Hablemos por WhatsApp ↗</a></div></div>
+<div class="ctas" style="margin-top:.7rem"><a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=scale.santiago@gmail.com&amp;su=Consulta%20por%20edici%C3%B3n%20de%20video" data-mail target="_blank" rel="noopener">Enviame un email</a><a class="btn" href="#" data-wa target="_blank" rel="noopener">Hablemos por WhatsApp ↗</a></div></div>
 </div>
 <div class="tc meta"><span>Córdoba, Argentina</span><span>Reels · TikTok · Videoclips</span><span>REC ●</span></div>
 <div class="sum">
@@ -209,14 +209,14 @@ nav.on{display:flex}nav a{font-size:1.6rem;font-weight:800;padding:.7rem 0;borde
 <p class="meta rv">Contacto</p>
 <h2 class="rv">¿Trabajamos<br><em>juntos?</em></h2>
 <p class="lead rv">¿Tenés una idea, una marca o contenido que necesita una nueva mirada? Hablemos.</p>
-<div class="ctas rv"><a class="btn p" href="mailto:scale.santiago@gmail.com">Enviame un email →</a><a class="btn" href="#" data-wa target="_blank" rel="noopener">Hablemos por WhatsApp ↗</a></div>
-<p class="meta">Córdoba, Argentina · <a class="ul" href="mailto:scale.santiago@gmail.com">scale.santiago@gmail.com</a></p>
+<div class="ctas rv"><a class="btn p" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=scale.santiago@gmail.com&amp;su=Consulta%20por%20edici%C3%B3n%20de%20video" data-mail target="_blank" rel="noopener">Enviame un email →</a><a class="btn" href="#" data-wa target="_blank" rel="noopener">Hablemos por WhatsApp ↗</a></div>
+<p class="meta">Córdoba, Argentina · <a class="ul" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=scale.santiago@gmail.com&amp;su=Consulta%20por%20edici%C3%B3n%20de%20video" data-mail target="_blank" rel="noopener">scale.santiago@gmail.com</a></p>
 </div></section>
 </main>
 
 <footer><div class="w fg">
 <div><b>Santiago Scalerandi</b><p class="meta" style="margin:.4rem 0">Editor de video · Creador de contenido · Diseñador gráfico</p><p class="meta">Córdoba, Argentina · © 2026 Santiago Scalerandi</p></div>
-<div class="fl meta"><a class="ul" href="mailto:scale.santiago@gmail.com">Email</a><a class="ul" href="#" data-wa target="_blank" rel="noopener">WhatsApp</a><a class="ul" id="ig" href="#" target="_blank" rel="noopener" hidden>Instagram</a></div>
+<div class="fl meta"><a class="ul" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=scale.santiago@gmail.com&amp;su=Consulta%20por%20edici%C3%B3n%20de%20video" data-mail target="_blank" rel="noopener">Email</a><a class="ul" href="#" data-wa target="_blank" rel="noopener">WhatsApp</a><a class="ul" id="ig" href="#" target="_blank" rel="noopener" hidden>Instagram</a></div>
 </div></footer>
 <a class="wa" href="#" data-wa target="_blank" rel="noopener" aria-label="Escribime por WhatsApp">WhatsApp</a>
 
@@ -272,8 +272,8 @@ addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#md").classList.contains(
 const bg=document.querySelector(".bg"),nv=$("#nav");
 bg.onclick=()=>{const o=nv.classList.toggle("on");bg.setAttribute("aria-expanded",o);bg.textContent=o?"Cerrar":"Menú"};
 nv.querySelectorAll("a").forEach(a=>a.onclick=()=>{nv.classList.remove("on");bg.textContent="Menú"});
-/* email: en computadora abre Gmail en una pestaña nueva (mailto falla si no hay app de correo configurada) */
-if(!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)){document.querySelectorAll('a[href^="mailto:"]').forEach(a=>a.addEventListener("click",e=>{e.preventDefault();window.open("https://mail.google.com/mail/?view=cm&fs=1&to=scale.santiago@gmail.com&su="+encodeURIComponent("Consulta por edición de video"),"_blank","noopener")}))}
+/* email: en computadora el enlace abre Gmail (mailto falla sin app de correo); en celular usa la app de correo */
+if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)){document.querySelectorAll("a[data-mail]").forEach(a=>{a.setAttribute("href","mailto:scale.santiago@gmail.com");a.removeAttribute("target")})}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.08});
 document.querySelectorAll(".rv").forEach(el=>io.observe(el));
 </script>
