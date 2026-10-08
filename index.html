@@ -79,10 +79,8 @@ nav{display:flex;gap:2rem;font-size:.85rem}
 .hd p{max-width:44ch;color:var(--mute)}
 .sub{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:.8rem;margin-bottom:1.5rem}
 .sub h3{font-size:clamp(1.3rem,2.4vw,2rem);letter-spacing:-.03em}
-.reels{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(.7rem,1.6vw,1.3rem);align-items:start}
-.pc{grid-column:span 3;position:relative;display:block;width:100%;padding:0;border:0;background:var(--card);border-radius:14px;overflow:hidden;cursor:pointer;color:#fff;text-align:left;font:inherit;isolation:isolate;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
-.pc:nth-child(1){grid-column:span 5}.pc:nth-child(2){grid-column:span 3;margin-top:5rem}.pc:nth-child(3){grid-column:span 4}
-.pc:nth-child(4){grid-column:2/span 4}.pc:nth-child(5){grid-column:7/span 4;margin-top:4rem}
+.reels{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(.7rem,1.6vw,1.3rem);align-items:start}
+.pc{grid-column:auto;position:relative;display:block;width:100%;padding:0;border:0;background:var(--card);border-radius:14px;overflow:hidden;cursor:pointer;color:#fff;text-align:left;font:inherit;isolation:isolate;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
 .pc img,.pc .gen{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .4s;z-index:-2}
 .gen{background:radial-gradient(110% 70% at 30% 15%,hsl(var(--h),30%,38%),#1a1917 75%)}
 .pc::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(0,0,0,.72));z-index:-1}
@@ -121,6 +119,7 @@ footer{border-top:1px solid var(--line);padding:2rem 0 5rem}
 .fb{position:relative;z-index:0;text-align:center;padding:1rem}
 .rv{opacity:0;transform:translateY(32px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
+@media(max-width:1100px) and (min-width:901px){.reels{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:900px){
 .ht{grid-template-columns:1fr;gap:1rem}.ph{order:-1;width:46%;aspect-ratio:1/1;margin-bottom:0}.ht h1{font-size:clamp(2.6rem,13vw,5rem)}
 nav{position:fixed;inset:60px 0 auto 0;background:var(--bg);flex-direction:column;gap:0;padding:1rem clamp(1.1rem,5vw,4rem) 2rem;border-bottom:1px solid var(--line);display:none}
@@ -129,8 +128,7 @@ nav.on{display:flex}nav a{font-size:1.6rem;font-weight:800;padding:.7rem 0;borde
 .hg,.two,.xp{grid-template-columns:1fr}
 .sum{grid-template-columns:1fr 1fr}.sum div:nth-child(2){border-right:0}.sum div:nth-child(n+3){border-top:1px solid var(--line)}.sum div:nth-child(3){padding-left:0}
 .reels{grid-template-columns:1fr 1fr}
-.pc,.pc:nth-child(n){grid-column:span 1;margin-top:0}
-.pc:nth-child(1){grid-column:span 2}.pc:nth-child(even){margin-top:1.5rem}
+.reels .pc:nth-child(5){grid-column:1/-1;width:calc(50% - .35rem);justify-self:center}
 .av{grid-template-columns:1fr}.av .pc:nth-child(n){grid-row:auto;aspect-ratio:16/10!important}
 .sv{grid-template-columns:2.2rem 1fr}.sv p{grid-column:2}.sv.main{margin:0 -1rem}
 .wa{display:flex}
@@ -191,6 +189,7 @@ nav.on{display:flex}nav a{font-size:1.6rem;font-weight:800;padding:.7rem 0;borde
 <p>Una selección de proyectos de edición audiovisual, contenido para redes y trabajos musicales.</p></div>
 <div class="sub rv"><h3>Reels / Contenido corto</h3><span class="meta">5 piezas · 9:16</span></div>
 <div class="reels" id="reels"></div>
+<p class="rv" style="margin-top:2rem"><a class="btn" href="https://www.tiktok.com/@santi.editando" target="_blank" rel="noopener">Ver más trabajos en TikTok · @santi.editando ↗</a></p>
 <div class="sub rv" style="margin-top:clamp(4rem,8vw,7rem)"><h3>Videos musicales / Audiovisual</h3><span class="meta">2 piezas</span></div>
 <div class="av" id="av"></div>
 </div></section>
@@ -211,12 +210,13 @@ nav.on{display:flex}nav a{font-size:1.6rem;font-weight:800;padding:.7rem 0;borde
 <p class="lead rv">¿Tenés una idea, una marca o contenido que necesita una nueva mirada? Hablemos.</p>
 <div class="ctas rv"><a class="btn p" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=scale.santiago@gmail.com&amp;su=Consulta%20por%20edici%C3%B3n%20de%20video" data-mail target="_blank" rel="noopener">Enviame un email →</a><a class="btn" href="#" data-wa target="_blank" rel="noopener">Hablemos por WhatsApp ↗</a></div>
 <p class="meta">Córdoba, Argentina · <a class="ul" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=scale.santiago@gmail.com&amp;su=Consulta%20por%20edici%C3%B3n%20de%20video" data-mail target="_blank" rel="noopener">scale.santiago@gmail.com</a></p>
+<p class="meta" style="margin-top:.8rem">TikTok · <a class="ul" href="https://www.tiktok.com/@santi.editando" target="_blank" rel="noopener">@santi.editando</a></p>
 </div></section>
 </main>
 
 <footer><div class="w fg">
 <div><b>Santiago Scalerandi</b><p class="meta" style="margin:.4rem 0">Editor de video · Creador de contenido · Diseñador gráfico</p><p class="meta">Córdoba, Argentina · © 2026 Santiago Scalerandi</p></div>
-<div class="fl meta"><a class="ul" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=scale.santiago@gmail.com&amp;su=Consulta%20por%20edici%C3%B3n%20de%20video" data-mail target="_blank" rel="noopener">Email</a><a class="ul" href="#" data-wa target="_blank" rel="noopener">WhatsApp</a><a class="ul" id="ig" href="#" target="_blank" rel="noopener" hidden>Instagram</a></div>
+<div class="fl meta"><a class="ul" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=scale.santiago@gmail.com&amp;su=Consulta%20por%20edici%C3%B3n%20de%20video" data-mail target="_blank" rel="noopener">Email</a><a class="ul" href="#" data-wa target="_blank" rel="noopener">WhatsApp</a><a class="ul" href="https://www.tiktok.com/@santi.editando" target="_blank" rel="noopener">TikTok</a><a class="ul" id="ig" href="#" target="_blank" rel="noopener" hidden>Instagram</a></div>
 </div></footer>
 <a class="wa" href="#" data-wa target="_blank" rel="noopener" aria-label="Escribime por WhatsApp">WhatsApp</a>
 
